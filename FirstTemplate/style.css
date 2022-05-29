@@ -1,21 +1,203 @@
+/* Google Font Link */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins" , sans-serif;
 }
 body{
-    position: relative;
-    min-height: 100vh;
-    width: 100%;
-    overflow: hidden;
+    background-color: #b0b3b8;
 }
 .sidebar{
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 240px;
-    padding: 6px, 14px;
-    background-color: F3F9FF;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 78px;
+  background: #FFFFFF;
+  padding: 6px 14px;
+  z-index: 99;
+  transition: all 0.5s ease;
 }
+.sidebar.open{
+  width: 200px;
+}
+.sidebar .logo-details{
+    padding-left: 55px;
+  height: 100px;
+  /* display: flex; */
+  align-items: center;
+  position: relative;
+}
+.sidebar .logo-details .icon{
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+.sidebar .logo-details .logo_name{
+  color: #070606;
+  font-size: 20px;
+  font-weight: 600;
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+.sidebar.open .logo-details .icon,
+.sidebar.open .logo-details .logo_name{
+  opacity: 1;
+}
+.sidebar .logo-details #btn{
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  font-size: 22px;
+  transition: all 0.4s ease;
+  font-size: 23px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+.sidebar.open .logo-details #btn{
+  text-align: right;
+}
+.sidebar i{
+  color: #070606;
+  height: 60px;
+  min-width: 50px;
+  font-size: 28px;
+  text-align: center;
+  line-height: 60px;
+}
+.sidebar .nav-list{
+  margin-top: 20px;
+  height: 100%;
+}
+.sidebar li{
+  position: relative;
+  margin: 8px 0;
+  list-style: none;
+}
+.sidebar li a{
+  display: flex;
+  height: 100%;
+  width: 100%;
+  border-radius: 12px;
+  align-items: center;
+  text-decoration: none;
+  transition: all 0.4s ease;
+  background: #C1D0E4; 
+}
+.sidebar li a:hover{
+  background: #3B4365;
+}
+.sidebar li a .links_name{
+  color: #070606;
+  font-size: 15px;
+  font-weight: 400;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.4s;
+}
+.sidebar.open li a .links_name{
+  opacity: 1;
+  pointer-events: auto;
+}
+.sidebar li a:hover .links_name,
+.sidebar li a:hover i{
+  transition: all 0.5s ease;
+  color: #fff;
+}
+.sidebar li i{
+  height: 50px;
+  line-height: 50px;
+  font-size: 18px;
+  border-radius: 12px;
+}
+.sidebar li.logout{
+  position: fixed;
+  height: 60px;
+  width: 75px;
+  left: 0;
+  bottom: -8px;
+  padding: 10px 14px;
+  background: #fff;
+  transition: all 0.5s ease;
+  overflow: hidden;
+}
+.sidebar.open li.logout{
+  width: 200px;
+}
+.sidebar li .logout-details{
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+.sidebar li.logout .name{
+  font-size: 15px;
+  font-weight: 400;
+  color: #070606;
+  white-space: nowrap;
+}
+.sidebar .logout #log_out{
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  background: #fff;
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  border-radius: 0px;
+  transition: all 0.5s ease;
+}
+.sidebar.open .logout #log_out{
+  width: 50px;
+  background: none;
+}
+
+
+.home-section{
+  position: relative;
+  background: #E4E9F7;
+  min-height: 100vh;
+  top: 0;
+  left: 78px;
+  width: calc(100% - 78px);
+  transition: all 0.5s ease;
+  z-index: 2;
+}
+.sidebar.open ~ .home-section{
+  left: 200px;
+  width: calc(100% - 200px);
+}
+.home-section .text{
+  display: inline-block;
+  color: #11101d;
+  font-size: 25px;
+  font-weight: 500;
+  margin: 18px
+}
+
+/* 
+.home-section{
+    display: flex;
+    position: absolute;
+    height: 100%;
+    left: 200px;
+}
+.home-section .alarm{
+    font-size: 15px;
+    font-size: 500;
+    margin: 25px;
+}
+.home-section .message{
+    float: left;
+    width: 100%;
+}
+.home-section .bell{
+    padding: 20px;
+    
+    float: left;
+    
+} */
